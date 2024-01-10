@@ -2,6 +2,7 @@ import 'package:craftybay_ecommerce/presentation/ui/screens/home.dart';
 import 'package:craftybay_ecommerce/presentation/ui/utility/images_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,10 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void goTOHomeScreen() {
     Future.delayed(const Duration(seconds: 2)).then((value) {
-      Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (context) => const HomeScreen()),
-          (route) => false);
+      Get.offAll(const HomeScreen());
     });
   }
 
