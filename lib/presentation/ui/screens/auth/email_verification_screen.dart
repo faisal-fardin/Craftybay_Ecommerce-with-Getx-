@@ -29,7 +29,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
               ImageAssets.craftyBayLogoSVG,
               width: 100,
               height: 100,
-            )),
+            ),),
             Text(
               'Welcome Back',
               style: headTextStyle(),

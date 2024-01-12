@@ -10,12 +10,11 @@ class CraftyBay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  GetMaterialApp(
-      home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: MaterialColor(AppColor.primaryColor.value , AppColor().color),
       ),
-
+      home: const SplashScreen(),
     );
   }
 }

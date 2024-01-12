@@ -1,6 +1,8 @@
 
+import 'package:craftybay_ecommerce/presentation/ui/screens/auth/complete_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../../../../style_file.dart';
@@ -54,7 +56,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   child: ElevatedButton(
                     style: buttonStyle(),
                     onPressed: () {
-
+                      Get.to(const ComplateProfileScreen());
                     },
                     child: const Center(
                         child: Text(
@@ -63,7 +65,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                               fontSize: 18,
                               color: Colors.white,
                               fontWeight: FontWeight.bold),
-                        )),
+                        ),),
                   ),
                 ),
               ),
