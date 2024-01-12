@@ -29,7 +29,7 @@ class _ComplateProfileScreenState extends State<ComplateProfileScreen> {
                     width: 100,
                     height: 100,
                   ),),
-                Text('Complate Profile', style: headTextStyle(),),
+                Text('Complete Profile', style: headTextStyle(),),
                 const SizedBox(height: 8,),
                 Text('Get stared with us by share your details ', style: subTitel(),),
                 const SizedBox(height: 15,),
@@ -60,9 +60,10 @@ class _ComplateProfileScreenState extends State<ComplateProfileScreen> {
                 TextFormField(
                   maxLines: 5,
                   keyboardType: TextInputType.text,
-                  style: const TextStyle(fontSize: 22),
+                  style: const TextStyle(fontSize: 20),
                   decoration: const InputDecoration(
                     hintText: 'Shipping Address',
+                    hintStyle: TextStyle(fontSize: 18),
                     contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey),

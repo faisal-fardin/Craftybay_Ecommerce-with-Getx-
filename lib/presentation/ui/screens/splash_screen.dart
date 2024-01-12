@@ -1,9 +1,10 @@
 import 'package:craftybay_ecommerce/presentation/ui/screens/auth/email_verification_screen.dart';
-import 'package:craftybay_ecommerce/presentation/ui/screens/home.dart';
 import 'package:craftybay_ecommerce/presentation/ui/utility/images_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+
+import 'home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -21,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void goTOHomeScreen() {
     Future.delayed(const Duration(seconds: 3)).then((value) {
-      Get.offAll(const EmailVerificationScreen());
+      Get.offAll(const HomeScreen());
     });
   }
 
@@ -41,16 +42,12 @@ class _SplashScreenState extends State<SplashScreen> {
           )),
           const Spacer(),
           const CircularProgressIndicator(),
-          const SizedBox(
-            height: 16,
-          ),
+          const SizedBox( height: 16,),
           const Text(
             'Version 1.0.0',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20,),
         ],
       ),
     );
