@@ -1,5 +1,7 @@
+import 'package:craftybay_ecommerce/presentation/ui/screens/auth/opt_verification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 import '../../../../style_file.dart';
 import '../../utility/images_assets.dart';
@@ -57,7 +59,9 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
                   style: buttonStyle(),
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(const OtpVerificationScreen());
+                  },
                   child: const Center(
                       child: Text(
                     'Next',

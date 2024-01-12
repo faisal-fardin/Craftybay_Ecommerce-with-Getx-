@@ -23,14 +23,14 @@ TextStyle subTitel() {
 InputDecoration appInputStyle(label) {
   return InputDecoration(
       contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-      enabledBorder: const OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.grey),
+      enabledBorder:  OutlineInputBorder(
+        borderSide: BorderSide(color: AppColor.primaryColor),
       ),
-      disabledBorder: const OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.grey),
+      disabledBorder:  OutlineInputBorder(
+        borderSide: BorderSide(color: AppColor.primaryColor),
       ),
-      border:  const OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.grey),
+      border:   OutlineInputBorder(
+        borderSide: BorderSide(color: AppColor.primaryColor),
       ),
       labelText:label ,
   );
