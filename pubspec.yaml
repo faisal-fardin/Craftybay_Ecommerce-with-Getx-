@@ -17,6 +17,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg:
   get:
+  google_fonts:
+  pin_code_fields:
+  carousel_slider:
 
 
 
