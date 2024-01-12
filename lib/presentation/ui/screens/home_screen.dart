@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:craftybay_ecommerce/presentation/ui/utility/color_palette.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

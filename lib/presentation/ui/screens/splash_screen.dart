@@ -1,4 +1,3 @@
-import 'package:craftybay_ecommerce/presentation/ui/screens/auth/email_verification_screen.dart';
 import 'package:craftybay_ecommerce/presentation/ui/utility/images_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
