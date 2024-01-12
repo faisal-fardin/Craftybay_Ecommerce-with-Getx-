@@ -1,8 +1,9 @@
 import 'package:craftybay_ecommerce/presentation/ui/utility/color_palette.dart';
+import 'package:craftybay_ecommerce/presentation/ui/widgets/home/section_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../utility/images_assets.dart';
+import '../widgets/category_card.dart';
 import '../widgets/circular_icon_button.dart';
 import '../widgets/home/home_banner_slider.dart';
 
@@ -67,7 +68,27 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const SizedBox(height: 16),
               const HomeBannerSlider(),
-
+              const SizedBox(height: 16),
+              SectionHeader(
+                onTap: () {},
+                title: 'Categories',
+              ),
+              const SizedBox(height: 8),
+              SizedBox(
+                height: 100,
+                child: ListView.builder(
+                  itemCount: 10,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return const CategoryCard();
+                  },
+                ),
+              ),
+              const SizedBox(height: 16),
+              SectionHeader(
+                onTap: () {},
+                title: 'Popular',
+              ),
             ],
           ),
         ),
@@ -75,3 +96,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
