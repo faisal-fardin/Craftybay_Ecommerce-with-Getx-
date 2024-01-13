@@ -29,40 +29,47 @@ class _AddNewReviewState extends State<AddNewReview> {
                   backgroundColor: Colors.white,
                   elevation: 0,
                 ),
-                const SizedBox(height: 30,),
+                const SizedBox(
+                  height: 30,
+                ),
                 TextFormField(
                   keyboardType: TextInputType.name,
                   style: const TextStyle(fontSize: 22),
                   decoration: appInputStyle('First Name'),
                 ),
-                const SizedBox(height: 12,),
+                const SizedBox(
+                  height: 12,
+                ),
                 TextFormField(
                   keyboardType: TextInputType.name,
                   style: const TextStyle(fontSize: 22),
                   decoration: appInputStyle('Last Name'),
                 ),
-                const SizedBox(height: 12,),
-
+                const SizedBox(
+                  height: 12,
+                ),
                 TextFormField(
                   maxLines: 7,
                   keyboardType: TextInputType.text,
                   style: const TextStyle(fontSize: 22),
                   decoration: const InputDecoration(
                     hintText: 'Write Review',
-                    contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey),
                     ),
                     disabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey),
                     ),
-                    border:  OutlineInputBorder(
+                    border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey),
                     ),
                   ),
-
                 ),
-                const SizedBox(height: 12,),
+                const SizedBox(
+                  height: 12,
+                ),
                 SizedBox(
                   width: double.infinity,
                   height: 60,
@@ -70,8 +77,7 @@ class _AddNewReviewState extends State<AddNewReview> {
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
                       style: buttonStyle(),
-                      onPressed: () {
-                      },
+                      onPressed: () {},
                       child: const Text(
                         'Submit',
                         style: TextStyle(
