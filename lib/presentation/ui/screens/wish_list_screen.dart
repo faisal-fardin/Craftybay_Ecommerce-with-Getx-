@@ -33,11 +33,11 @@ class _WishListScreenState extends State<WishListScreen> {
         ),
 
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          padding: const EdgeInsets.symmetric(horizontal: 0.0),
           child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              crossAxisSpacing: 10,
+              crossAxisCount: 4,
+              crossAxisSpacing: 0,
               mainAxisSpacing: 10,
             ),
             itemBuilder: (context, index) {

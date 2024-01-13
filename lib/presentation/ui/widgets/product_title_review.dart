@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../screens/product_review_screen.dart';
 import '../utility/color_palette.dart';
 import 'custom_stepper.dart';
 
@@ -52,7 +54,7 @@ class ProductReview extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-
+                Get.to(const ProductReviewScreen());
               },
               child: Text(
                 'Review',
