@@ -1,4 +1,3 @@
-import 'package:craftybay_ecommerce/presentation/ui/screens/category_list_screen.dart';
 import 'package:craftybay_ecommerce/presentation/ui/screens/product_list_screen.dart';
 import 'package:craftybay_ecommerce/presentation/ui/utility/color_palette.dart';
 import 'package:craftybay_ecommerce/presentation/ui/widgets/home/section_header.dart';
