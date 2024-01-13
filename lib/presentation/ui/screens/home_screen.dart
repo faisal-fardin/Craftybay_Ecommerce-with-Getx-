@@ -5,6 +5,7 @@ import 'package:craftybay_ecommerce/presentation/ui/widgets/home/section_header.
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import '../../state_holders/main_bottom_nav_controller.dart';
 import '../utility/images_assets.dart';
 import '../widgets/category_card.dart';
 import '../widgets/circular_icon_button.dart';
@@ -75,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 16),
               SectionHeader(
                 onTap: () {
-                  Get.to(const CategoryListScreen());
+                   Get.find<MainBottomNavController>().changeScreen(1);
                 },
                 title: 'Categories',
               ),
