@@ -1,7 +1,10 @@
+import 'package:craftybay_ecommerce/presentation/ui/screens/category_list_screen.dart';
+import 'package:craftybay_ecommerce/presentation/ui/screens/product_list_screen.dart';
 import 'package:craftybay_ecommerce/presentation/ui/utility/color_palette.dart';
 import 'package:craftybay_ecommerce/presentation/ui/widgets/home/section_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import '../utility/images_assets.dart';
 import '../widgets/category_card.dart';
 import '../widgets/circular_icon_button.dart';
@@ -71,7 +74,9 @@ class _HomeScreenState extends State<HomeScreen> {
               const HomeBannerSlider(),
               const SizedBox(height: 16),
               SectionHeader(
-                onTap: () {},
+                onTap: () {
+                  Get.to(const CategoryListScreen());
+                },
                 title: 'Categories',
               ),
               const SizedBox(height: 8),
@@ -87,7 +92,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const SizedBox(height: 16),
               SectionHeader(
-                onTap: () {},
+                onTap: () {
+                  Get.to(const ProductListScreen());
+                },
                 title: 'Popular',
               ),
               SizedBox(
@@ -100,10 +107,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
               ),
-
               const SizedBox(height: 16),
               SectionHeader(
-                onTap: () {},
+                onTap: () {
+                  Get.to(const ProductListScreen());
+                },
                 title: 'Special',
               ),
               SizedBox(
@@ -118,7 +126,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const SizedBox(height: 16),
               SectionHeader(
-                onTap: () {},
+                onTap: () {
+                  Get.to(const ProductListScreen());
+                },
                 title: 'New',
               ),
               SizedBox(
@@ -138,5 +148,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
