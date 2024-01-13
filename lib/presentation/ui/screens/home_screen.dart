@@ -6,6 +6,7 @@ import '../utility/images_assets.dart';
 import '../widgets/category_card.dart';
 import '../widgets/circular_icon_button.dart';
 import '../widgets/home/home_banner_slider.dart';
+import '../widgets/product_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -88,6 +89,47 @@ class _HomeScreenState extends State<HomeScreen> {
               SectionHeader(
                 onTap: () {},
                 title: 'Popular',
+              ),
+              SizedBox(
+                height: 170,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 20,
+                  itemBuilder: (context, index) {
+                    return const ProductCard();
+                  },
+                ),
+              ),
+
+              const SizedBox(height: 16),
+              SectionHeader(
+                onTap: () {},
+                title: 'Special',
+              ),
+              SizedBox(
+                height: 170,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 20,
+                  itemBuilder: (context, index) {
+                    return const ProductCard();
+                  },
+                ),
+              ),
+              const SizedBox(height: 16),
+              SectionHeader(
+                onTap: () {},
+                title: 'New',
+              ),
+              SizedBox(
+                height: 170,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 20,
+                  itemBuilder: (context, index) {
+                    return const ProductCard();
+                  },
+                ),
               ),
             ],
           ),
