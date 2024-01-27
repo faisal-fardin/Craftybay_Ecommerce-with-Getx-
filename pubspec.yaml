@@ -20,6 +20,8 @@ dependencies:
   google_fonts:
   pin_code_fields:
   carousel_slider: ^4.2.1
+  http:
+
 
 
 
