@@ -1,3 +1,4 @@
+import 'package:craftybay_ecommerce/presentation/state_holders/email_verification_controller.dart';
 import 'package:craftybay_ecommerce/presentation/ui/screens/auth/opt_verification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -15,12 +16,9 @@ class EmailVerificationScreen extends StatefulWidget {
 }
 
 class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
-
   final TextEditingController _emailEditingController = TextEditingController();
 
   final GlobalKey<FormState> _fromKey = GlobalKey<FormState>();
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +32,12 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                 height: 100,
               ),
               Center(
-                  child: SvgPicture.asset(
-                ImageAssets.craftyBayLogoSVG,
-                width: 100,
-                height: 100,
-              ),),
+                child: SvgPicture.asset(
+                  ImageAssets.craftyBayLogoSVG,
+                  width: 100,
+                  height: 100,
+                ),
+              ),
               Text(
                 'Welcome Back',
                 style: headTextStyle(),
@@ -56,40 +55,49 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: TextFormField(
+                  controller: _emailEditingController,
                   keyboardType: TextInputType.emailAddress,
                   style: const TextStyle(fontSize: 22),
                   decoration: appInputStyle('Email Address'),
                   validator: (String? text) {
-                    if(text?.isEmpty ?? true){
+                    if (text?.isEmpty ?? true) {
                       return "Enter your email address";
-                    } else if(text!.isEmail == false ){
+                    } else if (text!.isEmail == false) {
                       return "Enter a valid email";
                     }
                     return null;
                   },
                 ),
               ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: 70,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ElevatedButton(
-                    style: buttonStyle(),
-                    onPressed: () {
-                      if(_fromKey.currentState!.validate()){
-                        Get.to(const OtpVerificationScreen());
-                      }
-                    },
-                    child: const Center(
-                        child: Text(
-                      'Next',
-                      style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                    )),
-                  ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: 70,
+                  child: GetBuilder<EmailVerificationController>(
+                      builder: (controller) {
+                    if (controller.emailVerificationInProgress) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                    return ElevatedButton(
+                      style: buttonStyle(),
+                      onPressed: () async {
+                        if (_fromKey.currentState!.validate()) {
+                          verifyEmail(controller);
+                        }
+                      },
+                      child: const Center(
+                          child: Text(
+                        'Next',
+                        style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                      )),
+                    );
+                  }),
                 ),
               ),
             ],
@@ -97,5 +105,22 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
         ),
       ),
     );
+  }
+
+  Future<void> verifyEmail(EmailVerificationController controller) async {
+    final response = await controller.verifyEmail(
+      _emailEditingController.text.trim(),
+    );
+    if (response) {
+      Get.to(const OtpVerificationScreen());
+    } else {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Email Verification failed!'),
+          ),
+        );
+      }
+    }
   }
 }
