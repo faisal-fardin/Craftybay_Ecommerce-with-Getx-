@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import 'auth/email_verification_screen.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -20,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void goTOHomeScreen() {
     Future.delayed(const Duration(seconds: 3)).then((value) {
-      Get.offAll(const MainBottomNavScreen());
+      Get.offAll(const EmailVerificationScreen());
     });
   }
 

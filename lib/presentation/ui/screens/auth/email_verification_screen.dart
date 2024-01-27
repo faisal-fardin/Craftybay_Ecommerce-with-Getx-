@@ -15,65 +15,85 @@ class EmailVerificationScreen extends StatefulWidget {
 }
 
 class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
+
+  final TextEditingController _emailEditingController = TextEditingController();
+
+  final GlobalKey<FormState> _fromKey = GlobalKey<FormState>();
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 100,
-            ),
-            Center(
-                child: SvgPicture.asset(
-              ImageAssets.craftyBayLogoSVG,
-              width: 100,
-              height: 100,
-            ),),
-            Text(
-              'Welcome Back',
-              style: headTextStyle(),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Text(
-              'Please enter your email address',
-              style: subTitel(),
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                style: const TextStyle(fontSize: 22),
-                decoration: appInputStyle('Email Address'),
+        child: Form(
+          key: _fromKey,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 100,
               ),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width,
-              height: 70,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                  style: buttonStyle(),
-                  onPressed: () {
-                    Get.to(const OtpVerificationScreen());
+              Center(
+                  child: SvgPicture.asset(
+                ImageAssets.craftyBayLogoSVG,
+                width: 100,
+                height: 100,
+              ),),
+              Text(
+                'Welcome Back',
+                style: headTextStyle(),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Text(
+                'Please enter your email address',
+                style: subTitel(),
+              ),
+              const SizedBox(
+                height: 12,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  style: const TextStyle(fontSize: 22),
+                  decoration: appInputStyle('Email Address'),
+                  validator: (String? text) {
+                    if(text?.isEmpty ?? true){
+                      return "Enter your email address";
+                    } else if(text!.isEmail == false ){
+                      return "Enter a valid email";
+                    }
+                    return null;
                   },
-                  child: const Center(
-                      child: Text(
-                    'Next',
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
-                  )),
                 ),
               ),
-            ),
-          ],
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 70,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    style: buttonStyle(),
+                    onPressed: () {
+                      if(_fromKey.currentState!.validate()){
+                        Get.to(const OtpVerificationScreen());
+                      }
+                    },
+                    child: const Center(
+                        child: Text(
+                      'Next',
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    )),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
