@@ -81,7 +81,7 @@ class _AddNewReviewState extends State<AddNewReview> {
                       child: const Text(
                         'Submit',
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 22,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),
                       ),
