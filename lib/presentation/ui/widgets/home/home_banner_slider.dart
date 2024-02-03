@@ -1,10 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:craftybay_ecommerce/data/models/slider_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../utility/color_palette.dart';
 
 class HomeBannerSlider extends StatefulWidget {
-  const HomeBannerSlider({super.key});
+   final List<SliderData> sliders;
+  const HomeBannerSlider({super.key, required this.sliders});
 
   @override
   State<HomeBannerSlider> createState() => _HomeBannerSliderState();

@@ -1,3 +1,4 @@
+import 'package:craftybay_ecommerce/presentation/state_holders/home_slider_controller.dart';
 import 'package:craftybay_ecommerce/presentation/ui/screens/product_list_screen.dart';
 import 'package:craftybay_ecommerce/presentation/ui/utility/color_palette.dart';
 import 'package:craftybay_ecommerce/presentation/ui/widgets/home/section_header.dart';
@@ -71,7 +72,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     )),
               ),
               const SizedBox(height: 16),
-              const HomeBannerSlider(),
+              GetBuilder<HomeSliderController>(
+                builder: (sliderController) {
+                  return const HomeBannerSlider();
+                }
+              ),
               const SizedBox(height: 16),
               SectionHeader(
                 onTap: () {

@@ -1,4 +1,5 @@
 
+import 'package:craftybay_ecommerce/presentation/state_holders/home_slider_controller.dart';
 import 'package:craftybay_ecommerce/presentation/ui/screens/cart_screen.dart';
 import 'package:craftybay_ecommerce/presentation/ui/screens/wish_list_screen.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,14 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
     const CardScreen(),
     const WishListScreen(),
   ];
+
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Get.find<HomeSliderController>().getHomeSlider();
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
