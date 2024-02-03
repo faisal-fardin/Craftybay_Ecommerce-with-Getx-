@@ -1,3 +1,4 @@
+import 'package:craftybay_ecommerce/presentation/state_holders/auth_controller.dart';
 import 'package:craftybay_ecommerce/presentation/ui/screens/main_bottom_nav_screen.dart';
 import 'package:craftybay_ecommerce/presentation/ui/utility/images_assets.dart';
 import 'package:flutter/material.dart';
@@ -20,9 +21,14 @@ class _SplashScreenState extends State<SplashScreen> {
     goTOHomeScreen();
   }
 
-  void goTOHomeScreen() {
+  Future<void> goTOHomeScreen() async {
+    await AuthController.getAccessToken();
     Future.delayed(const Duration(seconds: 3)).then((value) {
-      Get.offAll(const EmailVerificationScreen());
+      Get.offAll(
+        () => AuthController.isLoginIn
+            ? const MainBottomNavScreen()
+            : const EmailVerificationScreen(),
+      );
     });
   }
 
@@ -42,12 +48,16 @@ class _SplashScreenState extends State<SplashScreen> {
           )),
           const Spacer(),
           const CircularProgressIndicator(),
-          const SizedBox( height: 16,),
+          const SizedBox(
+            height: 16,
+          ),
           const Text(
             'Version 1.0.0',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
         ],
       ),
     );
