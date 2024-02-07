@@ -27,17 +27,26 @@ class _HomeBannerSliderState extends State<HomeBannerSlider> {
               onPageChanged: (int page, _) {
                 _selectedSlider.value = page;
               }),
-          items: [1, 2, 3, 4, 5].map((i) {
+          items: widget.sliders.map((sliderData) {
             return Builder(
               builder: (BuildContext context) {
                 return Container(
                   width: MediaQuery.of(context).size.width,
                   margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                  decoration: const BoxDecoration(color: Colors.amber),
+                  decoration:  BoxDecoration(color: AppColor.primaryColor.withOpacity(0.4)),
                   alignment: Alignment.center,
-                  child: Text(
-                    'text $i',
-                    style: const TextStyle(fontSize: 16.0),
+                  child: Stack(
+                    children: [
+                      Image.network(sliderData.image ?? ''),
+                      Positioned(
+                        bottom: 0,
+                        child: Text(sliderData.title ?? '' ,style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white,
+                        ),),
+                      ),
+                    ],
                   ),
                 );
               },
@@ -49,7 +58,7 @@ class _HomeBannerSliderState extends State<HomeBannerSlider> {
           valueListenable: _selectedSlider,
           builder: (context, value, _) {
             List<Widget> list = [];
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < widget.sliders.length; i++) {
               list.add(
                 Container(
                   width: 15,

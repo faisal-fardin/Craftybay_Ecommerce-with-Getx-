@@ -72,15 +72,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     )),
               ),
               const SizedBox(height: 16),
-              GetBuilder<HomeSliderController>(
-                builder: (sliderController) {
-                  return const HomeBannerSlider();
-                }
-              ),
+              GetBuilder<HomeSliderController>(builder: (homeSliderController) {
+                return HomeBannerSlider(
+                    sliders: homeSliderController.sliderModel.data ?? []);
+              }),
               const SizedBox(height: 16),
               SectionHeader(
                 onTap: () {
-                   Get.find<MainBottomNavController>().changeScreen(1);
+                  Get.find<MainBottomNavController>().changeScreen(1);
                 },
                 title: 'Categories',
               ),
