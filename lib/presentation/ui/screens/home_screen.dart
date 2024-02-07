@@ -72,10 +72,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     )),
               ),
               const SizedBox(height: 16),
-              GetBuilder<HomeSliderController>(builder: (homeSliderController) {
-                return HomeBannerSlider(
-                    sliders: homeSliderController.sliderModel.data ?? []);
-              }),
+              GetBuilder<HomeSliderController>(
+                builder: (homeSliderController) {
+                  if(homeSliderController.getHomeSliderInProgress){
+                    return const SizedBox(
+                      height: 180,
+                      child: Center(
+                        child: CircularProgressIndicator(),
+                      ),
+                    );
+                  }
+                  return HomeBannerSlider(
+                    sliders: homeSliderController.sliderModel.data ?? [],
+                  );
+                },
+              ),
               const SizedBox(height: 16),
               SectionHeader(
                 onTap: () {
