@@ -1,4 +1,4 @@
-import 'package:craftybay_ecommerce/data/models/category_model.dart';
+import 'package:craftybay_ecommerce/data/models/categoryData.dart';
 import 'package:craftybay_ecommerce/presentation/ui/utility/color_palette.dart';
 import 'package:flutter/material.dart';
 
