@@ -1,3 +1,4 @@
+import 'package:craftybay_ecommerce/presentation/state_holders/category_controller.dart';
 import 'package:craftybay_ecommerce/presentation/state_holders/main_bottom_nav_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -36,17 +37,39 @@ class _CategoryListScreenState extends State<CategoryListScreen> {
           ),
           elevation: 0,
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 14.0),
-          child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
-              crossAxisSpacing: 16,
-              mainAxisSpacing: 16,
-            ),
-            itemBuilder: (context, index) {
-              return const FittedBox(child: CategoryCard());
-            },
+        body: RefreshIndicator(
+            onRefresh: () async {
+              await Future.delayed(
+                  const Duration(milliseconds: 400));
+              Get.find<CategoryController>().getCategory();
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 14.0),
+            child: GetBuilder<CategoryController>(builder: (categoryController) {
+              if(categoryController.getCategoryModelInProgress){
+                return const SizedBox(
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                );
+              }
+              return GridView.builder(
+                padding: const EdgeInsets.only(top: 10),
+                itemCount: categoryController.categoryModel.data?.length ?? 0,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                ),
+                itemBuilder: (context, index) {
+                  return FittedBox(
+                    child: CategoryCard(
+                      categoryData: categoryController.categoryModel.data![index],
+                    ),
+                  );
+                },
+              );
+            }),
           ),
         ),
       ),
