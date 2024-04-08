@@ -5,7 +5,7 @@ import 'package:craftybay_ecommerce/data/services/network_caller.dart';
 import 'package:craftybay_ecommerce/data/utility/urls.dart';
 import 'package:get/get.dart';
 
-class ProductController extends GetxController {
+class PopularProductController extends GetxController {
   bool _getPopularProductInProgress = false;
   ProductModel _popularProductModel = ProductModel();
   String _errorMessage = '';
