@@ -11,4 +11,8 @@ class Urls{
 
    static String getCategories = "$_baseUrl/CategoryList";
 
+   static String getProductByRemarks(String remarks) => "$_baseUrl/ListProductByRemark/$remarks";
+
+
+
 }

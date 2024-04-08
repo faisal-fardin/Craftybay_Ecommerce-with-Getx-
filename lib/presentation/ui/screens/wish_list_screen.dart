@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../state_holders/main_bottom_nav_controller.dart';
@@ -15,10 +14,10 @@ class _WishListScreenState extends State<WishListScreen> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-        canPop: false,
-        onPopInvoked: (bool didPop) {
-          return Get.find<MainBottomNavController>().backToHome();
-        },
+      canPop: false,
+      onPopInvoked: (bool didPop) {
+        return Get.find<MainBottomNavController>().backToHome();
+      },
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
@@ -31,7 +30,6 @@ class _WishListScreenState extends State<WishListScreen> {
           ),
           elevation: 0,
         ),
-
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 0.0),
           child: GridView.builder(
@@ -41,7 +39,9 @@ class _WishListScreenState extends State<WishListScreen> {
               mainAxisSpacing: 10,
             ),
             itemBuilder: (context, index) {
-              return const FittedBox(child: ProductCard());
+              return const FittedBox(
+                //child: ProductCard(),
+              );
             },
           ),
         ),
