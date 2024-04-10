@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../../utility/color_palette.dart';
 
 class ProductScreenSlider extends StatefulWidget {
-  const ProductScreenSlider({super.key});
+  final List<String> imagesList;
+
+  const ProductScreenSlider({super.key, required this.imagesList});
 
   @override
   State<ProductScreenSlider> createState() => _ProductScreenSliderState();
@@ -26,17 +28,19 @@ class _ProductScreenSliderState extends State<ProductScreenSlider> {
               _selected.value = page;
             },
           ),
-          items: [1, 2, 3, 4, 5].map((i) {
+          items: widget.imagesList.map((imageUrl) {
             return Builder(
               builder: (BuildContext context) {
                 return Container(
-                    width: MediaQuery.of(context).size.width,
-                    decoration:  BoxDecoration(color: Colors.grey.shade400),
-                    alignment: Alignment.center,
-                    child: Text(
-                      'text $i',
-                      style: const TextStyle(fontSize: 16.0),
-                    ));
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade400,
+                    image: DecorationImage(
+                      image: NetworkImage(imageUrl),
+                    ),
+                  ),
+                  alignment: Alignment.center,
+                );
               },
             );
           }).toList(),
@@ -49,7 +53,7 @@ class _ProductScreenSliderState extends State<ProductScreenSlider> {
             valueListenable: _selected,
             builder: (context, value, _) {
               List<Widget> list = [];
-              for (int i = 0; i < 5; i++) {
+              for (int i = 0; i < widget.imagesList.length; i++) {
                 list.add(Container(
                   width: 12,
                   height: 12,

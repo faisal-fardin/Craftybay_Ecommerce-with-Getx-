@@ -1,3 +1,4 @@
+import 'package:craftybay_ecommerce/data/models/product.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../screens/product_review_screen.dart';
@@ -5,7 +6,9 @@ import '../utility/color_palette.dart';
 import 'custom_stepper.dart';
 
 class ProductReview extends StatelessWidget {
-  const ProductReview({super.key});
+  const ProductReview({super.key, required this.product});
+
+  final Product product;
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +16,9 @@ class ProductReview extends StatelessWidget {
       children: [
         Row(
           children: [
-            const Expanded(
-                child: Text(
-                  'Adidas Shop HK2345 - Black Edition',
-                  style: TextStyle(
+             Expanded(
+                child: Text( product.title ?? '00',
+                  style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w700,
                       letterSpacing: 0.5),
@@ -34,17 +36,17 @@ class ProductReview extends StatelessWidget {
         ),
         Row(
           children: [
-            const Wrap(
+             Wrap(
               crossAxisAlignment: WrapCrossAlignment.center,
               children: [
-                Icon(
+                const Icon(
                   Icons.star,
                   size: 20,
                   color: Colors.amber,
                 ),
                 Text(
-                  '4.5',
-                  style: TextStyle(
+                  '${product.star}',
+                  style: const TextStyle(
                       overflow: TextOverflow.ellipsis,
                       fontSize: 18,
                       fontWeight: FontWeight.w500,

@@ -1,8 +1,10 @@
+import 'package:craftybay_ecommerce/data/models/product.dart';
 import 'package:flutter/material.dart';
 import '../utility/color_palette.dart';
 
 class SelectedSize extends StatefulWidget {
-  const SelectedSize({super.key});
+  final Product product;
+  const SelectedSize({super.key, required this.product});
 
   @override
   State<SelectedSize> createState() => _SelectedSizeState();
@@ -19,6 +21,8 @@ class _SelectedSizeState extends State<SelectedSize> {
   ];
 
   int _selectedSize = 0;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -77,15 +81,9 @@ class _SelectedSizeState extends State<SelectedSize> {
         const Text(
           'Description',
           style: TextStyle(
-              color: Colors.black, fontSize: 20, fontWeight: FontWeight.w500),
+              color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500),
         ),
-        const Text(
-          '''Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-           deserunt mollit anim id est laborum.''',
+         Text( widget.product.shortDes ?? '', style: const TextStyle(fontSize: 15),
         ),
       ],
     );
