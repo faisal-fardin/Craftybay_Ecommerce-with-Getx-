@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     prefixIcon: Icon(
                       Icons.search,
                       size: 22,
-                      color: AppColor.primaryColor,
+                      color: AppColors.primaryColor,
                     ),
                     fillColor: Colors.grey.shade300,
                     filled: true,

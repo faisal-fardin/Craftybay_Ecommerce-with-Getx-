@@ -60,7 +60,7 @@ class _ProductScreenSliderState extends State<ProductScreenSlider> {
                   margin: const EdgeInsets.symmetric(horizontal: 5),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: value == i ? AppColor.primaryColor : Colors.white,
+                    color: value == i ? AppColors.primaryColor : Colors.white,
                   ),
                 ));
               }

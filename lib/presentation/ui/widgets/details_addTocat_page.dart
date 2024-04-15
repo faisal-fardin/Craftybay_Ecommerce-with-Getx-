@@ -11,7 +11,7 @@ class DetailsCartPage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-          color: AppColor.primaryColor.withOpacity(0.3),
+          color: AppColors.primaryColor.withOpacity(0.3),
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(16),
             topRight: Radius.circular(16),
@@ -33,7 +33,7 @@ class DetailsCartPage extends StatelessWidget {
               Text('\$1000' ,style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
-                  color: AppColor.primaryColor),),
+                  color: AppColors.primaryColor),),
             ],
           ),
           SizedBox(

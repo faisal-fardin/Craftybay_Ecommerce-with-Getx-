@@ -70,8 +70,8 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                       activeFillColor: Colors.white,
                       inactiveFillColor: Colors.white,
                       selectedFillColor: Colors.white,
-                      activeColor: AppColor.primaryColor,
-                      inactiveColor: AppColor.primaryColor,
+                      activeColor: AppColors.primaryColor,
+                      inactiveColor: AppColors.primaryColor,
                       selectedColor: Colors.green,
                     ),
                     animationDuration: const Duration(milliseconds: 300),
@@ -126,7 +126,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                       TextSpan(
                           text: '120s',
                           style: TextStyle(
-                              color: AppColor.primaryColor,
+                              color: AppColors.primaryColor,
                               fontSize: 20,
                               fontWeight: FontWeight.bold)),
                     ])),

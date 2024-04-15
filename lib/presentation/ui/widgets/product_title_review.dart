@@ -1,4 +1,4 @@
-import 'package:craftybay_ecommerce/data/models/product.dart';
+import 'package:craftybay_ecommerce/data/models/product_details.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../screens/product_review_screen.dart';
@@ -6,9 +6,9 @@ import '../utility/color_palette.dart';
 import 'custom_stepper.dart';
 
 class ProductReview extends StatelessWidget {
-  const ProductReview({super.key, required this.product});
+  const ProductReview({super.key,  required this.productDetails});
 
-  final Product product;
+  final ProductDetails productDetails;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class ProductReview extends StatelessWidget {
         Row(
           children: [
              Expanded(
-                child: Text( product.title ?? '00',
+                child: Text( productDetails.product!.title ?? '00',
                   style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w700,
@@ -45,7 +45,7 @@ class ProductReview extends StatelessWidget {
                   color: Colors.amber,
                 ),
                 Text(
-                  '${product.star}',
+                  '${''}',
                   style: const TextStyle(
                       overflow: TextOverflow.ellipsis,
                       fontSize: 18,
@@ -62,12 +62,12 @@ class ProductReview extends StatelessWidget {
                 'Review',
                 style: TextStyle(
                     fontSize: 18,
-                    color: AppColor.primaryColor,
+                    color: AppColors.primaryColor,
                     fontWeight: FontWeight.w500),
               ),
             ),
             Card(
-              color: AppColor.primaryColor,
+              color: AppColors.primaryColor,
               child: const Padding(
                 padding: EdgeInsets.all(2.0),
                 child: Icon(

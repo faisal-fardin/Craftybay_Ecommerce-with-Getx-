@@ -18,10 +18,10 @@ class ProductCard extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(10),
       onTap: (){
-        Get.to( ProductDetails(product: product,));
+        Get.to( const ProductDetailsScreen( ));
       },
       child: Card(
-        shadowColor: AppColor.primaryColor.withOpacity(.2),
+        shadowColor: AppColors.primaryColor.withOpacity(.2),
         elevation: 4,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         child: SizedBox(
@@ -31,7 +31,7 @@ class ProductCard extends StatelessWidget {
               Container(
                 height: 100,
                 decoration: BoxDecoration(
-                  color: AppColor.primaryColor.withOpacity(0.1),
+                  color: AppColors.primaryColor.withOpacity(0.1),
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(8),
                     topRight: Radius.circular(8),
@@ -64,7 +64,7 @@ class ProductCard extends StatelessWidget {
                           '\$${product.price ?? 0}',
                           style: TextStyle(
                               fontSize: 13,
-                              color: AppColor.primaryColor,
+                              color: AppColors.primaryColor,
                               fontWeight: FontWeight.w500),
                         ),
                          Wrap(
@@ -86,7 +86,7 @@ class ProductCard extends StatelessWidget {
                           ],
                         ),
                          Card(
-                          color: AppColor.primaryColor,
+                          color: AppColors.primaryColor,
                           child: const Padding(
                             padding: EdgeInsets.all(2.0),
                             child: Icon(

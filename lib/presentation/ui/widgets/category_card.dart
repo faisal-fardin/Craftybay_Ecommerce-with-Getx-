@@ -21,7 +21,7 @@ class CategoryCard extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 8),
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: AppColor.primaryColor.withOpacity(0.2),
+              color: AppColors.primaryColor.withOpacity(0.2),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Image.network(categoryData.categoryImg ?? '',height: 50,),
@@ -33,7 +33,7 @@ class CategoryCard extends StatelessWidget {
             categoryData.categoryName ?? '',
             style: TextStyle(
                 fontSize: 15,
-                color: AppColor.primaryColor,
+                color: AppColors.primaryColor,
                 fontWeight: FontWeight.bold),
           ),
         ],

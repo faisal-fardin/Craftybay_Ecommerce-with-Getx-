@@ -77,7 +77,7 @@ class CartProductCard extends StatelessWidget {
                     Text(
                       '\$100',
                       style: TextStyle(
-                          color: AppColor.primaryColor,
+                          color: AppColors.primaryColor,
                           fontSize: 20,
                           fontWeight: FontWeight.w600),
                     ),

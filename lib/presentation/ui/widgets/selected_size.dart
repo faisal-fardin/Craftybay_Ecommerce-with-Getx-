@@ -57,7 +57,7 @@ class _SelectedSizeState extends State<SelectedSize> {
                       border: Border.all(color: Colors.grey),
                       borderRadius: BorderRadius.circular(4),
                       color:
-                          _selectedSize == index ? AppColor.primaryColor : null,
+                          _selectedSize == index ? AppColors.primaryColor : null,
                     ),
                     alignment: Alignment.center,
                     child: Text(

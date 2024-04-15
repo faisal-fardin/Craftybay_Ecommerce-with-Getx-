@@ -24,13 +24,13 @@ InputDecoration appInputStyle(label) {
   return InputDecoration(
       contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       enabledBorder:  OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.primaryColor),
+        borderSide: BorderSide(color: AppColors.primaryColor),
       ),
       disabledBorder:  OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.primaryColor),
+        borderSide: BorderSide(color: AppColors.primaryColor),
       ),
       border:   OutlineInputBorder(
-        borderSide: BorderSide(color: AppColor.primaryColor),
+        borderSide: BorderSide(color: AppColors.primaryColor),
       ),
       labelText:label ,
   );
@@ -50,11 +50,11 @@ ButtonStyle buttonStyle() {
 
 PinTheme AppOTPStyle() {
   return PinTheme(
-    inactiveColor: AppColor.primaryColor,
+    inactiveColor: AppColors.primaryColor,
     inactiveFillColor: Colors.white,
-    selectedColor: AppColor.primaryColor,
-    activeColor: AppColor.primaryColor,
-    selectedFillColor: AppColor.primaryColor,
+    selectedColor: AppColors.primaryColor,
+    activeColor: AppColors.primaryColor,
+    selectedFillColor: AppColors.primaryColor,
     shape: PinCodeFieldShape.box,
     borderRadius: BorderRadius.circular(5),
     fieldHeight: 50,

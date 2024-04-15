@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppColor{
+class AppColors{
 
   Map<int, Color> color =
   {

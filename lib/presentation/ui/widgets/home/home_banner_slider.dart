@@ -33,7 +33,7 @@ class _HomeBannerSliderState extends State<HomeBannerSlider> {
                 return Container(
                   width: MediaQuery.of(context).size.width,
                   margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                  decoration:  BoxDecoration(color: AppColor.primaryColor.withOpacity(0.4)),
+                  decoration:  BoxDecoration(color: AppColors.primaryColor.withOpacity(0.4)),
                   alignment: Alignment.center,
                   child: Stack(
                     children: [
@@ -67,7 +67,7 @@ class _HomeBannerSliderState extends State<HomeBannerSlider> {
                   decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey),
                       borderRadius: BorderRadius.circular(10),
-                      color: value == i ? AppColor.primaryColor : null),
+                      color: value == i ? AppColors.primaryColor : null),
                 ),
               );
             }

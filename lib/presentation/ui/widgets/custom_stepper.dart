@@ -38,7 +38,7 @@ class _CustomStepperState extends State<CustomStepper> {
             child: Container(
               padding: const EdgeInsets.all(4),
               decoration: BoxDecoration(
-                  color: AppColor.primaryColor,
+                  color: AppColors.primaryColor,
                   borderRadius: BorderRadius.circular(3)
               ),
               child: const Icon(
@@ -70,7 +70,7 @@ class _CustomStepperState extends State<CustomStepper> {
             child: Container(
               padding: const EdgeInsets.all(4),
               decoration: BoxDecoration(
-                  color: AppColor.primaryColor,
+                  color: AppColors.primaryColor,
                   borderRadius: BorderRadius.circular(3)
               ),
               child: const Icon(

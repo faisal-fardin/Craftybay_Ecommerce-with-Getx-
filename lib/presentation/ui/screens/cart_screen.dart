@@ -53,7 +53,7 @@ class _CardScreenState extends State<CardScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
             decoration: BoxDecoration(
-                color: AppColor.primaryColor.withOpacity(0.3),
+                color: AppColors.primaryColor.withOpacity(0.3),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(16),
                   topRight: Radius.circular(16),
@@ -78,7 +78,7 @@ class _CardScreenState extends State<CardScreen> {
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
-                          color: AppColor.primaryColor),
+                          color: AppColors.primaryColor),
                     ),
                   ],
                 ),

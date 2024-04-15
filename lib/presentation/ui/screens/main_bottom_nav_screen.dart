@@ -56,7 +56,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
             return BottomNavigationBar(
                 currentIndex: mainBottomNavController.currentSelectedIndex,
                 onTap: mainBottomNavController.changeScreen,
-                selectedItemColor: AppColor.primaryColor,
+                selectedItemColor: AppColors.primaryColor,
                 unselectedItemColor: Colors.grey,
                 showUnselectedLabels: true,
                 elevation: 4,
